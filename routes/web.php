@@ -71,7 +71,7 @@ Route::get('catalog', function(){
 
 Route::get('catalog/medicines', function(){
     return view('catalog', ["type" => "Medicines"]);
-})->name('medicines');
+});
 
 Route::get('catalog/equipments', function(){
     return view('catalog', ["type" => "Medical Equipments"]);
@@ -89,3 +89,7 @@ Route::get('aboutus', function(){
     return view('aboutus');
 })->name('aboutus');
 
+//Kemudahan laravel: bila pakai resource, maka pada routing cukup buat satu line routing (memiliki arti CRUD)
+//Penulisan URL bebas
+Route::resource('medicines', 'MedicineController');
+Route::resource('categories', 'MedicineController');

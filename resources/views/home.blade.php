@@ -92,7 +92,7 @@
                 UbayaFarma
             </div>
             <div class="links">
-                <a href="{{ route("medicines") }}">Medicines</a>
+                <a href="medicines">Medicines</a>
                 <a href="{{ route("equipments") }}">Medical Equipments</a>
                 <a href="{{ route("aboutus") }}">About Us</a>
             </div>
