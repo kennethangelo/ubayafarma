@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 //Sintaks di atas akan sama dengan sintaks di bawah
 //Closure artinya url ini ditulis langsung di dalam route web
 //Jika ada Routing\ViewController, artinya url diatur dalam ViewController
+//Kemudahan laravel: bila pakai resource, maka pada routing cukup buat satu line routing (memiliki arti CRUD)
+//Penulisan URL bebas
+Route::resource('medicines', 'MedicineController');
+Route::resource('categories', 'MedicineController');
+
+
 Route::view('/', 'home');
 
 //foo is URL, function() is callback
@@ -89,7 +95,4 @@ Route::get('aboutus', function(){
     return view('aboutus');
 })->name('aboutus');
 
-//Kemudahan laravel: bila pakai resource, maka pada routing cukup buat satu line routing (memiliki arti CRUD)
-//Penulisan URL bebas
-Route::resource('medicines', 'MedicineController');
-Route::resource('categories', 'MedicineController');
+Route::get('/report/listmedicine/{id}', 'CategoryController@showlist')->name('reportShowMedicine');
